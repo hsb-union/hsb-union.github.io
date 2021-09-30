@@ -1,0 +1,58 @@
+# This is a basic workflow that is manually triggered
+
+name: Deploy website
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      username:
+        description: 'Your username'
+        required: true
+      reponame:
+        description: 'Your reponame'
+        required: true
+      token:
+        description: 'Your Github token'
+        required: true
+      gitemail:
+        description: 'Your git commit email'
+        required: false
+        default: 'CI@example.com'
+      gitname:
+        description: 'Your git commit name'
+        required: false
+        default: 'CI'
+      gitmsg:
+        description: 'Your git commit message'
+        required: false
+        default: 'deploy'
+      cname:
+        description: 'Your custom domain'
+        required: false
+        default: 'none'
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell. Based on https://raw.githubusercontent.com/xRealNeon/VuePagesAction/main/action.yml
+    - name: Build site
+      run: |
+              npm ci
+              npm run build
+              cd dist
+              ln -s index.html 404.html
+              if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
+              git config --global user.email "${{ inputs.gitemail }}"
+              git config --global user.name "${{ inputs.gitname }}"
+              git init
+              git add -A
+              git commit -m '${{ inputs.gitmsg }}'
+              git push -f https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
