@@ -19,6 +19,8 @@ jobs:
     # Runs a single command using the runners shell. Based on https://raw.githubusercontent.com/xRealNeon/VuePagesAction/main/action.yml
     - name: Build site
       run: |
+              git clone git@github.com:hsb-union/hsb-union.github.io.git
+              cd hsb-union.github.io
               cd hsb-union
               npm ci
               npm run build
