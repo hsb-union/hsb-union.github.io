@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/hsb-union.github.io/'
+    publicPath: 'https://hsb-union.github.io/'
 }
