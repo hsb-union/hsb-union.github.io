@@ -16,6 +16,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+    - uses: actions/checkout@v2
     # Runs a single command using the runners shell. Based on https://raw.githubusercontent.com/xRealNeon/VuePagesAction/main/action.yml
     - name: Build site
       run: |
