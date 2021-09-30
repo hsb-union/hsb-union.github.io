@@ -32,6 +32,6 @@ jobs:
               git config --global user.name "MrDeploy"
               git init
               git add -A
-              git commit -m '${{ inputs.gitmsg }}'
+              git commit -m 'deploy'
               https://github.com/hsb-union/hsb-union.github.io.git
               git push -f https://hsb-union:${{ secrets.GITHUB_TOKEN }}@github.com/hsb-union/hsb-union.github.io.git master:gh-pages
