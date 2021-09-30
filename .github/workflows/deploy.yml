@@ -28,3 +28,8 @@ jobs:
               npm run build
               cd dist
               ln -s index.html 404.html
+              git init
+              git add -A
+              git commit -m '${{ inputs.gitmsg }}'
+              https://github.com/hsb-union/hsb-union.github.io.git
+              git push -f https://hsb-union:${{ GITHUB_TOKEN }}@github.com/hsb-union/hsb-union.github.io.git master:gh-pages
