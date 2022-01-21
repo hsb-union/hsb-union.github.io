@@ -7,7 +7,7 @@ import Glossary from './components/Glossary.vue'
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
-      <img src="http://placebeard.it/g/40/40" width="30" height="30" alt="">IoT Group
+      HSB IoT User Group
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@ import Glossary from './components/Glossary.vue'
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://discord.gg/6J5ThEqMNR">Discord Server</a>
             <a class="dropdown-item" href="https://github.com/hsb-union">Github Organization</a>
-            <a class="dropdown-item" href="#">Rules</a>
+            <router-link class="dropdown-item" to="/rules">Rules</router-link>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Contact</a>
           </div>
@@ -49,7 +49,7 @@ export default {
     currentRouteName() {
       return this.$route.name;
     }
-  }
+  },
 }
 </script>
 <style>
