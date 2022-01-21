@@ -1,0 +1,14 @@
+{
+  "items": [
+    {
+      "name": "IoT",
+      "text": "The Internet of things (IoT) describes physical objects (or groups of such objects) that are embedded with sensors, processing ability, software, and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks. Wikipedia - Internet Of Things",
+      "source": "https://en.wikipedia.org/wiki/Internet_of_things"
+    },
+    {
+      "name" : "Device-to-device",
+      "text": "Device-to-Device (D2D) communication in cellular networks is defined as direct communication between two mobile users without traversing the Base Station (BS) or core network. D2D communication is generally non-transparent to the cellular network and it can occur on the cellular frequencies (i.e., inband) or unlicensed spectrum (i.e., outband). ",
+      "source": "https://en.wikipedia.org/wiki/Device-to-device"
+    }
+  ]
+}
