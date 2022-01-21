@@ -3,4 +3,5 @@ import App from './App.vue'
 import "popper.js"
 import "bootstrap";
 
-createApp(App).mount('#app')
+import router from "./router/index"
+createApp(App).use(router).mount('#app')

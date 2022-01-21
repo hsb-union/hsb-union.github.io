@@ -1,11 +1,10 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import Glossary from './components/Glossary.vue'
 </script>
 
 <template>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">
       <img src="http://placebeard.it/g/40/40" width="30" height="30" alt="">IoT Group
@@ -17,11 +16,11 @@ import HelloWorld from './components/HelloWorld.vue'
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <router-link class="nav-link" active-class="active" to="/home">Home</router-link>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#glossary">Glossary</a>
+          <router-link class="nav-link" active-class="active" to="/glossary">Glossary</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -36,19 +35,22 @@ import HelloWorld from './components/HelloWorld.vue'
             <a class="dropdown-item" href="#">Contact</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
       </ul>
     </div>
   </nav>
-  <img alt="Vue logo" src="http://placekitten.com/300/300"/>
 
+  <router-view></router-view>
 </template>
 
 <script>
-
-
+export default {
+  name: "App",
+  computed: {
+    currentRouteName() {
+      return this.$route.name;
+    }
+  }
+}
 </script>
 <style>
 
