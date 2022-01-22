@@ -29,7 +29,7 @@
               </vue-plyr>
             </div>
             <div v-if="item.image !== 'undefined' && item.image != ''" class="top-buffer">
-              <img :src="item.image" class="img-fluid">
+              <img :src="item.image" class="img-fluid img-rounded-soft">
             </div>
           </div>
         </div>
@@ -54,6 +54,9 @@ export default {
 <style scoped>
 .img-rounded {
   border-radius: 50%;
+}
+.img-rounded-soft {
+  border-radius: 2%;
 }
 .top-buffer {
   margin-top: 5%;
