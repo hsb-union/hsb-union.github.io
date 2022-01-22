@@ -5,6 +5,10 @@ import Rules from "../components/Rules.vue";
 
 const routes = [
     {
+        path: '/',
+        redirect: '/home'
+    },
+    {
         path: '/home',
         name: 'Home',
         component: Home,
