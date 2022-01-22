@@ -29,11 +29,22 @@
             <p>The Internet of things (IoT) describes physical objects (or groups of such objects) that are embedded with sensors, processing ability, software, and other technologies that connect and exchange data with other devices and systems over the Internet or other communications networks.</p>
             <footer class="blockquote-footer">Wikipedia: <cite title="Source Title">Internet_of_things</cite></footer>
           </blockquote>
+
         </div>
       </div>
       <p class="lead">
         <a class="btn btn-primary btn-lg" href="https://en.wikipedia.org/wiki/Internet_of_things" role="button">Learn more</a>
       </p>
+      <vue-plyr>
+        <div class="plyr__video-embed">
+          <iframe
+              src="https://youtu.be/uaeADiepfXk?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+              allowfullscreen
+              allowtransparency
+              allow="autoplay"
+          ></iframe>
+        </div>
+      </vue-plyr>
     </div>
   </div>
 </template>
