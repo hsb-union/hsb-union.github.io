@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div v-for="item in getProjects['items:']" :key="item.name" class="row top-buffer">
+    <div v-for="item in getProjects['items']" :key="item.name" class="row top-buffer">
 
 
       <div class="col">
