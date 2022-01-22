@@ -3,15 +3,13 @@
   <table class="table table-striped table-dark">
     <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Term</th>
+      <th scope="col">Description</th>
+      <th scope="col">Source</th>
     </tr>
     </thead>
     <tbody>
     <tr v-for="item in getGlossary.items" :key="item.name">
-      <th scope="row">1</th>
       <td>{{ item.name }}</td>
       <td>{{ item.text }}</td>
       <td>{{ item.source }}</td>
