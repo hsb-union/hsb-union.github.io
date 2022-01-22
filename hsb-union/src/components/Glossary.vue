@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container top-buffer">
   <table class="table table-striped table-dark">
     <thead>
     <tr>
@@ -33,5 +33,5 @@ export default {
 </script>
 
 <style scoped>
-
+.top-buffer { margin-top:5%; }
 </style>
