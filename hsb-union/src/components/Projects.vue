@@ -3,7 +3,7 @@
     <div v-for="item in getProjects['items:']" :key="item.name" class="row top-buffer">
 
 
-      <div class="col-8">
+      <div class="col">
         <div class="card bg-body">
           <img class="card-img-top" src="" alt="">
           <div class="card-body">
