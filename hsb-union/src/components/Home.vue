@@ -7,7 +7,7 @@
       </div>
       <div class="col">
         <div class="card bg-warning">
-          <img class="card-img-top" src="..." alt="">
+          <img class="card-img-top" src="" alt="">
           <div class="card-body">
             <h5 class="card-title">HSB IoT User Group</h5>
             <p class="card-text">Most of us find IoT interesting, but none of us talk to each other about it. We want to change that at the Bremen University of Applied Sciences, lets meet together! Join our Discord now!</p>

@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '/src/components/Home.vue'
-import Glossary from "../components/Glossary.vue";
-import Rules from "../components/Rules.vue";
+import Glossary from "/src/components/Glossary.vue";
+import Rules from "/src/components/Rules.vue";
 
 const routes = [
     {
