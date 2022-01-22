@@ -1,53 +1,36 @@
 <template>
   <div class="container">
-    <div class="row top-buffer" >
-      <div class="col-4">
-        <img class="img-fluid" src="http://placekitten.com/300/300">
-      </div>
-      <div class="col">
+    <div v-for="item in getProjects['items:']" :key="item.name" class="row top-buffer">
+
+
+      <div class="col-8">
         <div class="card bg-body">
           <img class="card-img-top" src="" alt="">
           <div class="card-body">
-            <h5 class="card-title">Project X</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            <a href="" class="btn btn-primary">Some Link</a>
-            <div class = "top-buffer">
-            <vue-plyr class ="top-buffer">
-              <div class="plyr__video-embed">
-                <iframe
-                    src="https://www.youtube.com/watch?v=-l5Pyg_pSYw?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
-                    allowfullscreen
-                    allowtransparency
-                    allow="autoplay"
-                ></iframe>
+            <h3 class="card-title">{{ item.name }}</h3>
+            <div v-if="item.roundImage !== 'undefined' && item.roundImage != ''">
+              <div class="col-4">
+                <img class="img-fluid top img-rounded" :src="item.roundImage">
               </div>
-            </vue-plyr></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row top-buffer" >
-      <div class="col-4">
-        <img class="img-fluid" src="http://placekitten.com/300/300">
-      </div>
-      <div class="col">
-        <div class="card bg-body">
-          <img class="card-img-top" src="" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Project Y</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-            <a href="" class="btn btn-primary">Some Link</a>
-            <div class = "top-buffer">
-              <vue-plyr class ="top-buffer">
+            </div>
+
+            <p class="card-text top-buffer float-left">{{ item.text }}</p>
+            <a :href="item.link" class="btn btn-primary">Read more</a>
+            <div v-if="item.video !== 'undefined' && item.video != ''" class="top-buffer">
+              <vue-plyr class="top-buffer">
                 <div class="plyr__video-embed">
                   <iframe
-                      src="https://youtu.be/fn3KWM1kuAw?amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                      :src="item.video"
                       allowfullscreen
                       allowtransparency
                       allow="autoplay"
                   ></iframe>
                 </div>
-              </vue-plyr></div>
+              </vue-plyr>
+            </div>
+            <div v-if="item.image !== 'undefined' && item.image != ''" class="top-buffer">
+              <img :src="item.image" class="img-fluid">
+            </div>
           </div>
         </div>
       </div>
@@ -56,14 +39,23 @@
 </template>
 
 <script>
+import projects from "./projects.json";
+
 export default {
-  name: "Projects"
+  name: "Projects",
+  computed: {
+    getProjects() {
+      return projects
+    }
+  }
 }
 </script>
 
 <style scoped>
-img {
+.img-rounded {
   border-radius: 50%;
 }
-.top-buffer { margin-top:5%; }
+.top-buffer {
+  margin-top: 5%;
+}
 </style>
